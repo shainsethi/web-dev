@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design & z-index</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 20px;
+            color: #1e293b;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .orientation-alert {
+            background-color: #ef4444;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+
+        /* 1. Mobile-First Grid Layout */
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .grid-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        /* 2. Media Query Overrides (Tablets) */
+        @media (min-width: 600px) {
+            .responsive-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .grid-card {
+                background-color: #dbeafe; /* Blue tint for tablet indicator */
+            }
+        }
+
+        /* 3. Media Query Overrides (Desktop) */
+        @media (min-width: 900px) {
+            .responsive-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .grid-card {
+                background-color: #d1fae5; /* Green tint for desktop indicator */
+            }
+        }
+
+        /* 4. Orientation Specifics */
+        @media (orientation: landscape) {
+            .orientation-alert {
+                background-color: #10b981;
+                content: "Landscape Mode Activated";
+            }
+            .orientation-alert::after {
+                content: " - Screen is wider than it is tall.";
+            }
+        }
+
+        @media (orientation: portrait) {
+            .orientation-alert {
+                background-color: #3b82f6;
+            }
+            .orientation-alert::after {
+                content: " - Screen is taller than it is wide.";
+            }
+        }
+
+        /* 5. z-index stacks overlay */
+        .stack-wrapper {
+            position: relative;
+            height: 250px;
+            background-color: #cbd5e1;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .panel {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 6px;
+            padding: 15px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+        }
+
+        .panel-back {
+            background-color: #e11d48;
+            top: 20px;
+            left: 20px;
+            z-index: 1;
+        }
+
+        .panel-middle {
+            background-color: #2563eb;
+            top: 50px;
+            left: 60px;
+            z-index: 2;
+        }
+
+        .panel-front {
+            background-color: #059669;
+            top: 80px;
+            left: 100px;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="orientation-alert">
+            Current Orientation:
+        </div>
+
+        <h3>1. Mobile-First Responsive Grid (Resize your browser window)</h3>
+        <p>Current viewport layouts: Mobile (1 Col, White), Tablet (2 Col, Blue), Desktop (3 Col, Green).</p>
+        <div class="responsive-grid">
+            <div class="grid-card"><h4>Card 1</h4><p>Grid Item Content</p></div>
+            <div class="grid-card"><h4>Card 2</h4><p>Grid Item Content</p></div>
+            <div class="grid-card"><h4>Card 3</h4><p>Grid Item Content</p></div>
+        </div>
+
+        <h3>2. z-index Overlap Stack (Absolute Depth Layers)</h3>
+        <div class="stack-wrapper">
+            <div class="panel panel-back">z-index: 1 (Red)</div>
+            <div class="panel panel-middle">z-index: 2 (Blue)</div>
+            <div class="panel panel-front">z-index: 3 (Green)</div>
+        </div>
+    </div>
+
+</body>
+</html>

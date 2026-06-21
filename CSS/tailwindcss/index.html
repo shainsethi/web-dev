@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer">
+        
+        <div class="h-40 bg-gradient-to-r from-violet-500 to-fuchsia-500 relative">
+            <span class="absolute top-4 right-4 bg-white/30 backdrop-blur-md text-white text-xs font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                Tech
+            </span>
+        </div>
+
+        <div class="p-6 relative">
+            
+            <div class="absolute -top-12 left-6">
+                <div class="w-20 h-20 rounded-full border-4 border-white bg-slate-200 overflow-hidden shadow-md flex items-center justify-center font-bold text-slate-700 text-2xl">
+                    JS
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="text-xl font-bold text-slate-800 hover:text-violet-600 transition-colors duration-200">
+                    Tailwind CSS Layout
+                </h3>
+                <p class="text-slate-500 text-sm mt-2 leading-relaxed">
+                    Build beautiful components rapidly with responsive helper prefixes, hover triggers, gradients, flex boxes, and borders directly inside your markup classes.
+                </p>
+            </div>
+
+            <div class="flex items-center gap-2 mt-6 pt-4 border-t border-slate-100">
+                <span class="bg-violet-50 text-violet-700 text-xs font-semibold px-3 py-1 rounded-md">
+                    Utility-First
+                </span>
+                <span class="bg-fuchsia-50 text-fuchsia-700 text-xs font-semibold px-3 py-1 rounded-md">
+                    Responsive
+                </span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

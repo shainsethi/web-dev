@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Demo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 30px;
+        }
+
+        .container {
+            background-color: white;
+            border: 1px solid #e1e4e8;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .box-demo {
+            background-color: #c3e6cb;
+            border: 5px solid #28a745;
+            padding: 20px;
+            margin: 15px;
+            color: #155724;
+            text-align: center;
+        }
+
+        .box-wrapper {
+            background-color: #f8d7da;
+            border: 2px dashed #dc3545;
+            display: inline-block;
+        }
+
+        .content-box-test {
+            box-sizing: content-box;
+            width: 200px;
+            height: 80px;
+            padding: 20px;
+            border: 10px solid #007bff;
+            background-color: #ffeeba;
+            margin-bottom: 10px;
+        }
+
+        .border-box-test {
+            box-sizing: border-box;
+            width: 200px;
+            height: 80px;
+            padding: 20px;
+            border: 10px solid #007bff;
+            background-color: #ffeeba;
+        }
+    </style>
+</head>
+<body>
+    <h1>The CSS Box Model</h1>
+
+    <div class="container">
+        <h3>Box Layout Visualizer</h3>
+        <p>In the dashed outer red wrapper below, the light-green background is the content and padding, the solid green line is the border, and the space between the dashed red line and solid green line is the margin.</p>
+        
+        <div class="box-wrapper">
+            <div class="box-demo">
+                Box Content Area
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>box-sizing comparison (Width: 200px, Height: 80px, Padding: 20px, Border: 10px)</h3>
+        
+        <h4>1. content-box (Default)</h4>
+        <div class="content-box-test">
+            Total Width: 260px<br>Total Height: 140px
+        </div>
+
+        <h4>2. border-box (Recommended)</h4>
+        <div class="border-box-test">
+            Total Width: 200px<br>Total Height: 80px
+        </div>
+    </div>
+</body>
+</html>

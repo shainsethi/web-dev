@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Basics</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8fafc;
+            margin: 30px;
+            color: #0f172a;
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 45px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .grid-container {
+            display: grid;
+            background-color: #e2e8f0;
+            border: 2px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 10px;
+            gap: 15px;
+        }
+
+        .cell {
+            background-color: #3b82f6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        /* Demo 1: Column configurations */
+        .cols-repeat {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        /* Demo 2: Column spanning */
+        .span-demo {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .span-2-col {
+            grid-column: span 2;
+            background-color: #10b981;
+        }
+
+        .span-first-to-third {
+            grid-column: 1 / 4;
+            background-color: #8b5cf6;
+        }
+
+        /* Demo 3: Named Template Areas */
+        .page-layout {
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: auto 150px auto;
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+        }
+
+        .header-area {
+            grid-area: header;
+            background-color: #f43f5e;
+        }
+
+        .sidebar-area {
+            grid-area: sidebar;
+            background-color: #f59e0b;
+        }
+
+        .main-area {
+            grid-area: main;
+            background-color: #10b981;
+            height: 150px;
+        }
+
+        .footer-area {
+            grid-area: footer;
+            background-color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Grid Layout Engine</h1>
+
+    <div class="section">
+        <h3>1. Standard Columns & Rows (repeat(3, 1fr))</h3>
+        <div class="grid-container cols-repeat">
+            <div class="cell">Cell 1</div>
+            <div class="cell">Cell 2</div>
+            <div class="cell">Cell 3</div>
+            <div class="cell">Cell 4</div>
+            <div class="cell">Cell 5</div>
+            <div class="cell">Cell 6</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>2. Spanning Columns (grid-column)</h3>
+        <div class="grid-container span-demo">
+            <div class="cell">Normal</div>
+            <div class="cell span-2-col">Spans 2 columns</div>
+            <div class="cell">Normal</div>
+            <div class="cell span-first-to-third">Starts at line 1, ends at 4</div>
+            <div class="cell">Normal</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>3. Grid Template Areas (Page Layout Layouts)</h3>
+        <div class="grid-container page-layout">
+            <div class="cell header-area">Header Area</div>
+            <div class="cell sidebar-area">Sidebar Area</div>
+            <div class="cell main-area">Main Content Area</div>
+            <div class="cell footer-area">Footer Area</div>
+        </div>
+    </div>
+</body>
+</html>

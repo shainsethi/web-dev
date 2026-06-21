@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms</title>
+</head>
+<body>
+    <h2>User Questionnaire</h2>
+    <form action="/submit" method="POST">
+        <!-- Input, Labels, Placeholder, and Name attribute -->
+        <div>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="user_fullname" placeholder="John Doe">
+        </div>
+        <br>
+        
+        <!-- Checkbox Input -->
+        <div>
+            <label>Favorite Technologies:</label><br>
+            <input type="checkbox" id="tech-html" name="fav_tech" value="html">
+            <label for="tech-html">HTML</label><br>
+            <input type="checkbox" id="tech-css" name="fav_tech" value="css">
+            <label for="tech-css">CSS</label>
+        </div>
+        <br>
+
+        <!-- Radio Input (shared name attribute) -->
+        <div>
+            <label>Are you a student?</label><br>
+            <input type="radio" id="student-yes" name="is_student" value="yes">
+            <label for="student-yes">Yes</label><br>
+            <input type="radio" id="student-no" name="is_student" value="no">
+            <label for="student-no">No</label>
+        </div>
+        <br>
+
+        <!-- Select Dropdown Input -->
+        <div>
+            <label for="country">Country:</label>
+            <select id="country" name="user_country">
+                <option value="us">United States</option>
+                <option value="in">India</option>
+                <option value="uk">United Kingdom</option>
+            </select>
+        </div>
+        <br>
+
+        <!-- Range Slider Input -->
+        <div>
+            <label for="skill-level">HTML Skill Level (1-10):</label>
+            <input type="range" id="skill-level" name="html_skill" min="1" max="10" value="5">
+        </div>
+        <br>
+
+        <!-- Textarea Element -->
+        <div>
+            <label for="feedback">Additional Comments:</label><br>
+            <textarea id="feedback" name="user_feedback" rows="4" cols="40" placeholder="Type here..."></textarea>
+        </div>
+        <br>
+
+        <!-- Button Element -->
+        <button type="submit">Submit Details</button>
+    </form>
+</body>
+</html>

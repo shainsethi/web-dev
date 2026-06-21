@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Items properties</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fa;
+            margin: 30px;
+            color: #333;
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .flex-container {
+            display: flex;
+            background-color: #e9ecef;
+            border: 2px solid #ced4da;
+            border-radius: 6px;
+            padding: 15px;
+            height: 150px;
+            margin-top: 15px;
+        }
+
+        .box {
+            background-color: #28a745;
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+            border-radius: 4px;
+            text-align: center;
+            margin: 5px;
+        }
+
+        .align-container {
+            align-items: flex-start;
+        }
+
+        .override-self {
+            align-self: flex-end;
+            background-color: #dc3545;
+        }
+
+        .grow-1 {
+            flex-grow: 1;
+        }
+
+        .grow-2 {
+            flex-grow: 2;
+            background-color: #007bff;
+        }
+
+        .basis-box {
+            flex-basis: 250px;
+            background-color: #6f42c1;
+        }
+
+        .first-order {
+            order: -1;
+            background-color: #ffc107;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexbox Items Configuration</h1>
+
+    <div class="section">
+        <h3>1. align-self (Overriding Container Alignment)</h3>
+        <p>Container has <code>align-items: flex-start</code>. The red box overrides this with <code>align-self: flex-end</code>.</p>
+        <div class="flex-container align-container">
+            <div class="box">Item 1</div>
+            <div class="box override-self">align-self: flex-end</div>
+            <div class="box">Item 3</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>2. flex-grow (Proportional space distribution)</h3>
+        <p>The green items have <code>flex-grow: 1</code>. The blue item has <code>flex-grow: 2</code> (occupies double the leftover space).</p>
+        <div class="flex-container">
+            <div class="box grow-1">grow: 1</div>
+            <div class="box grow-2">grow: 2</div>
+            <div class="box grow-1">grow: 1</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>3. flex-basis (Initial base sizing)</h3>
+        <p>The purple item has an initial size of 250px set by <code>flex-basis: 250px</code> before other spaces are allocated.</p>
+        <div class="flex-container">
+            <div class="box">Default size</div>
+            <div class="box basis-box">flex-basis: 250px</div>
+            <div class="box">Default size</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>4. order (Visual sequence manipulation)</h3>
+        <p>HTML order is Box 1, Box 2, Box 3. Box 3 is styled with <code>order: -1</code>, bringing it to the front visually.</p>
+        <div class="flex-container">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box first-order">Box 3 (order: -1)</div>
+        </div>
+    </div>
+</body>
+</html>

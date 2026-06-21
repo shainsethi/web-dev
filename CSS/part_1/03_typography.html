@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Typography and Text Formatting</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        .heading-serif {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: underline;
+            letter-spacing: 1px;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .text-justify {
+            text-align: justify;
+            width: 300px;
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            background-color: #ffffff;
+        }
+
+        .bold-text {
+            font-weight: bold;
+        }
+
+        .light-text {
+            font-weight: 300;
+        }
+
+        .decoration-none {
+            text-decoration: none;
+            color: #0d6efd;
+        }
+
+        .decoration-strike {
+            text-decoration: line-through;
+        }
+
+        .spaced-text {
+            letter-spacing: 4px;
+        }
+
+        .tight-height {
+            line-height: 1.1;
+        }
+
+        .loose-height {
+            line-height: 2.2;
+        }
+
+        .size-px {
+            font-size: 24px;
+        }
+
+        .size-rem {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading-serif">Typography Showcase</h1>
+
+    <h3>Alignment</h3>
+    <p class="text-left">Left aligned text.</p>
+    <p class="text-right">Right aligned text.</p>
+    <div class="text-justify">Justified text container block limits the margins and balances words dynamically across lines to create a clean rectangular margin alignment.</div>
+
+    <h3>Weight & Styling</h3>
+    <p class="bold-text">Bold text (700 weight equivalent)</p>
+    <p class="light-text">Light text (300 weight equivalent)</p>
+    <p><a href="#" class="decoration-none">Underline removed from anchor link</a></p>
+    <p class="decoration-strike">Striking through completed tasks</p>
+
+    <h3>Spacing & Heights</h3>
+    <p class="spaced-text">Spaced letter characters.</p>
+    <p class="tight-height">Tight line height.<br>This line is very close to the one above it due to line-height: 1.1.</p>
+    <p class="loose-height">Loose line height.<br>This line is far apart from the one above it due to line-height: 2.2.</p>
+
+    <h3>Sizing</h3>
+    <p class="size-px">24px Font Size</p>
+    <p class="size-rem">1.5rem Font Size (Relative to Root)</p>
+</body>
+</html>

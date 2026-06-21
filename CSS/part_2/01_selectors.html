@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>CSS Selectors Demonstration</h1>
+
+    <p>This is a standard paragraph showing a customized first letter.</p>
+
+    <p class="highlight">This is a highlighted class element.</p>
+
+    <div id="special-card" class="card">
+        <h3>Special Card (ID Selector)</h3>
+        <p>This is a descendant paragraph inside the card class. It gets styled specifically.</p>
+    </div>
+
+    <div class="parent">
+        <h3>Parent Element</h3>
+        <p>This is a direct child paragraph of parent class (styled blue/background).</p>
+        <div>
+            <p>This is a nested grandchild paragraph (not a direct child, so it remains unstyled).</p>
+        </div>
+    </div>
+
+    <br>
+    <h2>Adjacent Sibling Section</h2>
+    <p>This paragraph immediately follows the H2 element and is styled italic.</p>
+    <p>This paragraph does not immediately follow the H2 element, so it is normal.</p>
+
+    <div>General Sibling Div 1 (follows H2)</div>
+    <div>General Sibling Div 2 (follows H2)</div>
+
+    <br>
+    <h3>Attribute & Interactive Selectors</h3>
+    <p><a href="https://example.com" target="_blank">External Link (target _blank)</a></p>
+    <p><a href="https://example.com">Standard Link</a></p>
+    
+    <label>Name Input: </label>
+    <input type="text" placeholder="Type text here...">
+    
+    <br><br>
+    <button>Interactive Button</button>
+
+    <br><br>
+    <h3>Nth-Child Selection</h3>
+    <ul>
+        <li class="list-item">First item</li>
+        <li class="list-item">Second item (even)</li>
+        <li class="list-item">Third item</li>
+        <li class="list-item">Fourth item (even)</li>
+    </ul>
+
+    <br>
+    <h3>Pseudo-Elements</h3>
+    <span class="badge">Announcement Badge Element</span>
+    <br><br>
+    <div class="box">Content of a box container</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Grades Directory</h2>
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">Student Name</th>
+                <th colspan="2">Term Marks</th>
+            </tr>
+            <tr>
+                <th>HTML</th>
+                <th>CSS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alex Smith</td>
+                <td>95</td>
+                <td>88</td>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>90</td>
+                <td>85</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Average Term Marks</td>
+                <td>89.5</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

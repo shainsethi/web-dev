@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Keyframe Animations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+            margin: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            width: 500px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .animation-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            background-color: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            border-radius: 6px;
+            margin-top: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 1. Bouncing Ball */
+        .ball {
+            width: 40px;
+            height: 40px;
+            background-color: #f43f5e;
+            border-radius: 50%;
+            animation: bounce 0.6s infinite alternate cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(-50px);
+            }
+            100% {
+                transform: translateY(40px) scaleY(0.85);
+            }
+        }
+
+        /* 2. Pulse Box */
+        .pulse-element {
+            width: 60px;
+            height: 60px;
+            background-color: #3b82f6;
+            border-radius: 8px;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.9);
+                opacity: 0.5;
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+            70% {
+                transform: scale(1.1);
+                opacity: 1;
+                box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+            }
+            100% {
+                transform: scale(0.9);
+                opacity: 0.5;
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+            }
+        }
+
+        /* 3. Spinner */
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 6px solid #e2e8f0;
+            border-top-color: #8b5cf6;
+            border-radius: 50%;
+            animation: spin 1s infinite linear;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section">
+        <h3>1. Vertical Bouncing (translateY & scaleY)</h3>
+        <div class="animation-box">
+            <div class="ball"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>2. Heartbeat Pulse (scale, opacity & box-shadow)</h3>
+        <div class="animation-box">
+            <div class="pulse-element"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>3. Continuous Spinner Rotation (rotate)</h3>
+        <div class="animation-box">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+</body>
+</html>

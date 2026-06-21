@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cascading & Specificity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #fcfcfc;
+            color: #333;
+        }
+
+        /* 1. Source Order (equal specificity - last one wins) */
+        .color-test {
+            color: blue;
+        }
+        .color-test {
+            color: green;
+        }
+
+        /* 2. Specificity (Class vs Element) */
+        div p {
+            color: red;
+        }
+        .highlight-text {
+            color: purple;
+        }
+
+        /* 3. Specificity (ID vs Class) */
+        #unique-item {
+            color: orange;
+        }
+        .text-item {
+            color: brown;
+        }
+
+        /* 4. !important Overrides */
+        .forced-color {
+            color: teal !important;
+        }
+        #override-id {
+            color: pink;
+        }
+
+        /* 5. Inheritance */
+        .parent-inherited {
+            color: darkcyan;
+            font-size: 18px;
+            border: 2px solid darkcyan;
+            padding: 10px;
+        }
+        .child-non-inherited {
+            /* Border and padding are not inherited by default. */
+            background-color: #eee;
+        }
+        .child-forced-inherit {
+            border: inherit;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Specificity, Cascading & Inheritance</h1>
+
+    <h3>1. Source Order (Cascading)</h3>
+    <p class="color-test">This text is styled green because the green rule comes after the blue rule in the stylesheet (equal specificity).</p>
+
+    <h3>2. Specificity: Class vs Element selector</h3>
+    <div>
+        <p class="highlight-text">This text is purple. Even though "div p" is more specific than just a tag, the class ".highlight-text" has a higher specificity value (10 vs 2).</p>
+    </div>
+
+    <h3>3. Specificity: ID vs Class selector</h3>
+    <p id="unique-item" class="text-item">This text is orange. The ID selector "#unique-item" has higher specificity (100) than the class ".text-item" (10).</p>
+
+    <h3>4. Overriding with !important</h3>
+    <p id="override-id" class="forced-color">This text is teal. The !important rule on the class overrides the higher specificity ID selector (#override-id would normally make it pink).</p>
+
+    <h3>5. Inheritance Demonstration</h3>
+    <div class="parent-inherited">
+        Parent Box (Inherits color: darkcyan, font-size: 18px)
+        <p class="child-non-inherited">
+            Child paragraph: I automatically inherit the parent's font size and text color. But I do NOT inherit borders or padding.
+        </p>
+        <p class="child-forced-inherit">
+            Child paragraph: I forced-inherited the border using "border: inherit".
+        </p>
+    </div>
+</body>
+</html>

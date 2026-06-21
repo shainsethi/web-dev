@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Basics - Containers</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f2f5;
+            margin: 30px;
+            color: #333;
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .flex-container {
+            display: flex;
+            background-color: #e9ecef;
+            border: 2px solid #ced4da;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 15px;
+            height: 150px;
+        }
+
+        .box {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 25px;
+            margin: 5px;
+            font-weight: bold;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .row-dir {
+            flex-direction: row;
+        }
+
+        .column-dir {
+            flex-direction: column;
+            height: 300px;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .justify-evenly {
+            justify-content: space-evenly;
+        }
+
+        .align-start {
+            align-items: flex-start;
+        }
+
+        .align-center {
+            align-items: center;
+        }
+
+        .align-end {
+            align-items: flex-end;
+        }
+
+        .wrap-container {
+            flex-wrap: wrap;
+            height: auto;
+        }
+
+        .wrap-container .box {
+            width: 150px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexbox Containers & Axes</h1>
+
+    <div class="section">
+        <h3>1. flex-direction (row vs column)</h3>
+        
+        <h4>Direction: row (Default)</h4>
+        <div class="flex-container row-dir">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+
+        <h4>Direction: column</h4>
+        <div class="flex-container column-dir">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>2. justify-content (Main Axis Alignment)</h3>
+        
+        <h4>justify-content: center</h4>
+        <div class="flex-container justify-center">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+
+        <h4>justify-content: space-between</h4>
+        <div class="flex-container justify-between">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+
+        <h4>justify-content: space-evenly</h4>
+        <div class="flex-container justify-evenly">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>3. align-items (Cross Axis Alignment)</h3>
+        
+        <h4>align-items: flex-start</h4>
+        <div class="flex-container align-start">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+
+        <h4>align-items: center</h4>
+        <div class="flex-container align-center">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+
+        <h4>align-items: flex-end</h4>
+        <div class="flex-container align-end">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>4. flex-wrap (wrapping items)</h3>
+        <div class="flex-container wrap-container">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+            <div class="box">6</div>
+            <div class="box">7</div>
+            <div class="box">8</div>
+        </div>
+    </div>
+</body>
+</html>

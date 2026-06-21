@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transforms & Transitions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 40px;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #007bff;
+            margin: 20px auto;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .box-rotate:hover {
+            transform: rotate(45deg);
+            background-color: #28a745;
+        }
+
+        .box-scale:hover {
+            transform: scale(1.3);
+            background-color: #dc3545;
+        }
+
+        .box-translate:hover {
+            transform: translateY(-15px);
+            background-color: #ffc107;
+            color: black;
+        }
+
+        .box-skew:hover {
+            transform: skewX(-20deg);
+            background-color: #17a2b8;
+        }
+
+        .opacity-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .opacity-full-box {
+            width: 200px;
+            height: 100px;
+            background-color: #6f42c1;
+            color: white;
+            opacity: 0.5;
+            padding: 10px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .opacity-alpha-box {
+            width: 200px;
+            height: 100px;
+            background-color: rgba(111, 66, 193, 0.5);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Transitions & Transforms</h1>
+
+    <h3>Hover over the boxes to trigger 2D transforms:</h3>
+    <div class="container">
+        <div class="card">
+            <h4>Rotate (rotate(45deg))</h4>
+            <div class="box box-rotate">Rotate</div>
+        </div>
+        <div class="card">
+            <h4>Scale (scale(1.3))</h4>
+            <div class="box box-scale">Scale</div>
+        </div>
+        <div class="card">
+            <h4>Translate (translateY(-15px))</h4>
+            <div class="box box-translate">Translate</div>
+        </div>
+        <div class="card">
+            <h4>Skew (skewX(-20deg))</h4>
+            <div class="box box-skew">Skew</div>
+        </div>
+    </div>
+
+    <h3>Opacity vs. Background RGBA (Alpha Channel)</h3>
+    <div class="opacity-container">
+        <div class="card" style="width: auto;">
+            <h4>opacity: 0.5 (Affects child text!)</h4>
+            <div class="opacity-full-box">
+                <strong>Solid White Text</strong>
+            </div>
+        </div>
+        <div class="card" style="width: auto;">
+            <h4>rgba(111, 66, 193, 0.5) (Text remains opaque)</h4>
+            <div class="opacity-alpha-box">
+                <strong>Solid White Text</strong>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

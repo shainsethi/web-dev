@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Modes & Units</title>
+    <style>
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            background-color: #fafafa;
+        }
+
+        .container {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            background-color: #fff;
+            margin-bottom: 2rem;
+            border-radius: 6px;
+        }
+
+        .block-element {
+            display: block;
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .inline-element {
+            display: inline;
+            background-color: #d1ecf1;
+            color: #0c5460;
+            padding: 15px; /* Vertical padding won't push block elements away */
+            margin: 20px;  /* Vertical margin is ignored */
+            width: 300px;  /* Width is ignored */
+            height: 100px; /* Height is ignored */
+        }
+
+        .inline-block-element {
+            display: inline-block;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 10px;
+            margin: 10px;
+            width: 180px;
+            height: 60px;
+            text-align: center;
+        }
+
+        .parent-box {
+            width: 300px;
+            background-color: #ddd;
+            padding: 10px;
+        }
+
+        .percent-child {
+            width: 50%;
+            background-color: #007bff;
+            color: white;
+            padding: 5px;
+        }
+
+        .em-text {
+            font-size: 1.5em; /* 1.5 times default or container size */
+            padding: 1em;    /* Padding is relative to element's font-size (1.5 * 16px) */
+            background-color: #ffc107;
+        }
+
+        .rem-text {
+            font-size: 1.5rem; /* 1.5 times root html font-size (1.5 * 16px) */
+            padding: 1rem;    /* Padding is relative to root html size (16px) */
+            background-color: #17a2b8;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Display Modes & Sizing Units</h1>
+
+    <div class="container">
+        <h3>1. Display Behavior</h3>
+        
+        <h4>Block Display (Takes whole row, obeys width/height)</h4>
+        <div class="block-element">Block Element 1</div>
+        <div class="block-element">Block Element 2</div>
+
+        <h4>Inline Display (Fits contents, ignores width/height/vertical margin)</h4>
+        <div class="inline-element">Inline 1</div>
+        <div class="inline-element">Inline 2</div>
+        <div class="inline-element">Inline 3</div>
+
+        <br><br><br>
+        <h4>Inline-Block Display (Fits contents but respects width/height/margins)</h4>
+        <div class="inline-block-element">Inline Block 1</div>
+        <div class="inline-block-element">Inline Block 2</div>
+        <div class="inline-block-element">Inline Block 3</div>
+    </div>
+
+    <div class="container">
+        <h3>2. CSS Relative Sizing Units</h3>
+        
+        <h4>Percent (%) Sizing (50% of Parent's 300px)</h4>
+        <div class="parent-box">
+            <div class="percent-child">50% Width Box</div>
+        </div>
+
+        <h4>EM vs REM Units</h4>
+        <br>
+        <span class="em-text">EM Box (font-size & padding scale together)</span>
+        <br><br><br>
+        <span class="rem-text">REM Box (scales relative to root html size)</span>
+    </div>
+</body>
+</html>
