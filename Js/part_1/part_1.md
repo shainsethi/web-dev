@@ -177,3 +177,195 @@ let result = (2 + 3) * 5 ** 2 - 10 / 2;
     *   Expression becomes: `125 - 5`
 *   **Step 4 (Subtraction)**: `125 - 5` evaluates to `120`.
 *   **Final Output**: `result` holds `120`.
+
+---
+
+## 📖 Chapter 13: Variables – `var`, `let`, and `const`
+JavaScript offers three ways to declare variables: `var`, `let`, and `const`. Understanding their differences is essential to writing predictable, bug-free code.
+
+### 1. Declaring Variables with `var`
+`var` is the original way to declare variables in JavaScript (ES5 and earlier).
+```javascript
+var score = 100;
+score = 200;       // ✅ Reassignment is allowed
+var score = 300;   // ✅ Re-declaration is also allowed
+```
+
+### 2. Declaring Variables with `let`
+`let` was introduced in ES6 (2015) and is the modern way to declare variables whose value may change.
+```javascript
+let age = 25;
+age = 30;          // ✅ Reassignment is allowed
+// let age = 35;   // ❌ SyntaxError: Re-declaration is NOT allowed in the same scope
+```
+
+### 3. Declaring Variables with `const`
+`const` declares a **constant** – a variable that cannot be reassigned after its initial value is set.
+```javascript
+const PI = 3.14159;
+// PI = 3.14;      // ❌ TypeError: Assignment to constant variable
+// const PI = 3;   // ❌ SyntaxError: Re-declaration is NOT allowed
+```
+
+> [!IMPORTANT]
+> `const` prevents **reassignment**, not **mutation**. Objects and arrays declared with `const` can still have their properties or elements modified:
+> ```javascript
+> const user = { name: "Shain" };
+> user.name = "Updated";  // ✅ This works – you're mutating, not reassigning
+> // user = {};            // ❌ TypeError – you cannot reassign the variable itself
+> ```
+
+### 4. Declaring Without a Keyword
+If you assign a value to a variable name **without** using `var`, `let`, or `const`, JavaScript creates it as a **global variable** (attached to the `window` object in browsers):
+```javascript
+function example() {
+  leakedVar = "I am global now!"; // ⚠️ No keyword used
+}
+example();
+console.log(leakedVar); // ✅ Accessible everywhere – dangerous!
+```
+
+> [!WARNING]
+> **Never omit the keyword!** Implicit globals are a major source of bugs. Use `"use strict"` mode to catch these mistakes (see Chapter 16).
+
+---
+
+## 📖 Chapter 14: Scope – Where Variables Live
+
+### 1. `var` is Function-Scoped
+`var` ignores block boundaries (`if`, `for`, etc.) and is only limited by the enclosing **function**:
+```javascript
+function varScope() {
+  if (true) {
+    var message = "Hello from inside an if block";
+  }
+  console.log(message); // ✅ Accessible – var leaks out of the block
+}
+```
+
+### 2. `let` and `const` are Block-Scoped
+`let` and `const` are confined to the nearest enclosing `{}` block:
+```javascript
+function letScope() {
+  if (true) {
+    let greeting = "Hello";
+    console.log(greeting); // ✅ Accessible inside the block
+  }
+  // console.log(greeting); // ❌ ReferenceError: greeting is not defined
+}
+```
+
+### 3. No Keyword = Global Scope
+As covered above, omitting the keyword entirely makes the variable global, which is almost always unintended and harmful.
+
+---
+
+## 📖 Chapter 15: Hoisting, Function Hoisting & the Temporal Dead Zone (TDZ)
+
+### 1. What is Hoisting?
+**Hoisting** is JavaScript's default behavior of moving variable and function **declarations** to the top of their scope during the compilation phase, **before** the code runs.
+
+### 2. `var` Hoisting
+`var` declarations are hoisted and initialized with `undefined`:
+```javascript
+console.log(hoistedVar); // undefined (no error, but no value yet!)
+var hoistedVar = "I am hoisted";
+console.log(hoistedVar); // "I am hoisted"
+```
+Internally, JavaScript treats the above as:
+```javascript
+var hoistedVar = undefined;       // Declaration hoisted to the top
+console.log(hoistedVar);          // undefined
+hoistedVar = "I am hoisted";      // Assignment stays in place
+console.log(hoistedVar);          // "I am hoisted"
+```
+
+### 3. `let` and `const` Hoisting – The Temporal Dead Zone
+`let` and `const` are also hoisted, but they are **not initialized**. Accessing them before their declaration line throws a `ReferenceError`. The region between the start of the scope and the declaration line is called the **Temporal Dead Zone (TDZ)**:
+```javascript
+// --- TDZ starts for hoistedLet ---
+// console.log(hoistedLet); // ❌ ReferenceError: Cannot access 'hoistedLet' before initialization
+let hoistedLet = "Safe now";
+// --- TDZ ends ---
+console.log(hoistedLet); // ✅ "Safe now"
+```
+
+### 4. Function Declaration Hoisting
+Function declarations are **fully hoisted** – both the name and the entire function body are moved to the top. You can call them before they appear in the code:
+```javascript
+console.log(greet()); // ✅ "Hello!" – works before the declaration
+function greet() {
+  return "Hello!";
+}
+```
+
+### 5. Function Expression Hoisting
+Function expressions assigned to a variable follow the hoisting rules of that variable's keyword (`var`, `let`, or `const`):
+```javascript
+// console.log(sayHi()); // ❌ TypeError: sayHi is not a function (var treats it as undefined)
+var sayHi = function () {
+  return "Hi!";
+};
+console.log(sayHi()); // ✅ "Hi!"
+```
+
+### 6. Browser Console Behavior – Why You See `undefined`
+When you type a statement in the browser console (e.g., `let x = 5;`), the console shows `undefined` below it. This is because:
+*   The browser console prints the **return value** of the statement you entered.
+*   Variable declarations (`let x = 5;`) do not produce a return value – they return `undefined` by default.
+*   This is **not** the value of `x`. If you then type `x`, it will correctly show `5`.
+
+```
+> let x = 5;
+← undefined       // ← This is the statement's return value, NOT the value of x
+> x
+← 5               // ← This is the actual value stored in x
+```
+
+> [!NOTE]
+> This is purely a console display behavior. It does not affect how your code runs in a script file.
+
+---
+
+## 📖 Chapter 16: `"use strict"` Mode
+Adding `"use strict";` at the top of a script or function enables **strict mode**, which catches common coding mistakes and unsafe actions:
+```javascript
+"use strict";
+// strictVar = "oops"; // ❌ ReferenceError: strictVar is not defined
+let strictVar = "correct"; // ✅ Must declare with a keyword
+```
+
+Key benefits of strict mode:
+*   **Prevents accidental globals**: Assigning to an undeclared variable throws a `ReferenceError` instead of silently creating a global.
+*   **Disallows duplicates**: Duplicate function parameter names throw a `SyntaxError`.
+*   **Makes `this` safer**: In functions not called as methods, `this` is `undefined` instead of the global object.
+
+> [!TIP]
+> ES6 modules (`import` / `export`) automatically run in strict mode, so you don't need to add `"use strict";` in module files.
+
+---
+
+## 📊 Comparison Table: `var` vs `let` vs `const`
+
+| Feature | `var` | `let` | `const` |
+|---|---|---|---|
+| **Introduced in** | ES1 (1997) | ES6 (2015) | ES6 (2015) |
+| **Scope** | Function-scoped | Block-scoped | Block-scoped |
+| **Reassignment** | ✅ Allowed | ✅ Allowed | ❌ Not allowed |
+| **Re-declaration (same scope)** | ✅ Allowed | ❌ Not allowed | ❌ Not allowed |
+| **Hoisted?** | ✅ Yes (initialized as `undefined`) | ✅ Yes (but **not** initialized) | ✅ Yes (but **not** initialized) |
+| **Temporal Dead Zone (TDZ)** | ❌ No | ✅ Yes | ✅ Yes |
+| **Must be initialized at declaration** | ❌ No (`var x;` is valid) | ❌ No (`let x;` is valid) | ✅ Yes (`const x;` is a SyntaxError) |
+| **Attaches to `window` (global scope)** | ✅ Yes | ❌ No | ❌ No |
+| **Best used for** | Legacy code | Variables that change | Constants & fixed references |
+
+### Function Hoisting Summary
+
+| Declaration Type | Hoisted? | Usable Before Declaration? |
+|---|---|---|
+| `function greet() {}` (declaration) | ✅ Fully hoisted (name + body) | ✅ Yes |
+| `var greet = function() {}` (expression) | ⚠️ Name hoisted as `undefined` | ❌ No (`TypeError`) |
+| `let greet = function() {}` (expression) | ⚠️ Hoisted but in TDZ | ❌ No (`ReferenceError`) |
+| `const greet = function() {}` (expression) | ⚠️ Hoisted but in TDZ | ❌ No (`ReferenceError`) |
+| `const greet = () => {}` (arrow) | ⚠️ Hoisted but in TDZ | ❌ No (`ReferenceError`) |
+
