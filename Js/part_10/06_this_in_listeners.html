@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>this in Event Listeners</title>
+</head>
+<body>
+  <button class="color">First</button>
+  <button class="color">Second</button>
+  <button id="arrow">Arrow function</button>
+  <p id="output"></p>
+  <script>
+    const output = document.querySelector("#output");
+
+    function highlight() {
+      this.style.backgroundColor = "gold";
+      output.textContent = `this is the ${this.textContent} button`;
+    }
+
+    for (let button of document.querySelectorAll(".color")) {
+      button.addEventListener("click", highlight);
+    }
+
+    document.querySelector("#arrow").addEventListener("click", () => {
+      output.textContent = `In an arrow function, this === window is ${this === window}`;
+    });
+  </script>
+</body>
+</html>

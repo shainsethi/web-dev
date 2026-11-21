@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sending Headers</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.7.9/dist/axios.min.js"></script>
+</head>
+<body>
+  <h1>Sending Headers with Axios</h1>
+  <button id="load">Get a joke</button>
+  <p id="status" role="status"></p>
+  <p id="joke"></p>
+  <script>
+    const loadButton = document.querySelector("#load");
+    const statusText = document.querySelector("#status");
+    const jokeText = document.querySelector("#joke");
+    const config = {
+      headers: { Accept: "application/json" },
+    };
+
+    loadButton.addEventListener("click", async () => {
+      loadButton.disabled = true;
+      statusText.textContent = "Loading...";
+
+      try {
+        const response = await axios.get("https://icanhazdadjoke.com/", config);
+
+        jokeText.textContent = response.data.joke;
+        statusText.textContent = "Loaded";
+      } catch (error) {
+        statusText.textContent = `Could not load the joke: ${error.message}`;
+      } finally {
+        loadButton.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

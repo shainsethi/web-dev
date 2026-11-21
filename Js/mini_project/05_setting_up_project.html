@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echo Tiles Setup</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <main class="game">
+    <h1>Echo Tiles</h1>
+    <p id="status" role="status">Press Start to play</p>
+    <div id="board" class="board">
+      <button class="tile" data-tile="moon" aria-label="Moon">☾</button>
+      <button class="tile" data-tile="sun" aria-label="Sun">☀</button>
+      <button class="tile" data-tile="star" aria-label="Star">★</button>
+      <button class="tile" data-tile="leaf" aria-label="Leaf">❧</button>
+      <button class="tile" data-tile="wave" aria-label="Wave">≈</button>
+      <button class="tile" data-tile="bolt" aria-label="Bolt">ϟ</button>
+    </div>
+    <button id="start">Start</button>
+  </main>
+  <script>
+    const tileNames = ["moon", "sun", "star", "leaf", "wave", "bolt"];
+    const board = document.querySelector("#board");
+    const statusText = document.querySelector("#status");
+    const startButton = document.querySelector("#start");
+
+    console.log("Tiles on the board:", board.children.length === tileNames.length);
+  </script>
+</body>
+</html>

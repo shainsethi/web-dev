@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Removing Elements</title>
+</head>
+<body>
+  <ul id="list">
+    <li id="first">Removed with removeChild</li>
+    <li id="second">Removed with remove</li>
+    <li>Stays on the page</li>
+  </ul>
+  <script>
+    const list = document.querySelector("#list");
+
+    list.removeChild(document.querySelector("#first"));
+    document.querySelector("#second").remove();
+
+    console.log("Items left:", list.children.length);
+  </script>
+</body>
+</html>

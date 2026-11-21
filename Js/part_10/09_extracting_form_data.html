@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extracting Form Data</title>
+</head>
+<body>
+  <form id="profile">
+    <label for="username">Username:</label>
+    <input id="username" name="username" type="text">
+    <label for="course">Course:</label>
+    <select id="course" name="course">
+      <option>JavaScript</option>
+      <option>CSS</option>
+    </select>
+    <button>Save</button>
+  </form>
+  <p id="output"></p>
+  <script>
+    const form = document.querySelector("#profile");
+    const output = document.querySelector("#output");
+
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const username = form.elements.username.value.trim();
+      const course = form.elements.course.value;
+
+      if (username === "") {
+        output.textContent = "Please enter a username";
+        return;
+      }
+
+      output.textContent = `${username} is studying ${course}`;
+      form.reset();
+    });
+  </script>
+</body>
+</html>

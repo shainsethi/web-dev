@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Using Axios</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.7.9/dist/axios.min.js"></script>
+</head>
+<body>
+  <h1>Using Axios</h1>
+  <button id="load">Get a cat fact</button>
+  <p id="status" role="status"></p>
+  <p id="fact"></p>
+  <script>
+    const loadButton = document.querySelector("#load");
+    const statusText = document.querySelector("#status");
+    const factText = document.querySelector("#fact");
+
+    async function getFact() {
+      const response = await axios.get("https://catfact.ninja/fact");
+
+      return response.data.fact;
+    }
+
+    loadButton.addEventListener("click", async () => {
+      loadButton.disabled = true;
+      statusText.textContent = "Loading...";
+
+      try {
+        factText.textContent = await getFact();
+        statusText.textContent = "Loaded";
+      } catch (error) {
+        statusText.textContent = `Could not load the fact: ${error.message}`;
+      } finally {
+        loadButton.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

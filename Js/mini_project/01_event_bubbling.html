@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Bubbling</title>
+  <style>
+    div, ul, li {
+      padding: 16px;
+      border: 1px solid gray;
+    }
+  </style>
+</head>
+<body>
+  <div id="outer">
+    Div
+    <ul id="middle">
+      Ul
+      <li id="inner">Li</li>
+      <li id="stop">Li with stopPropagation</li>
+    </ul>
+  </div>
+  <p id="output">Click an item</p>
+  <script>
+    const output = document.querySelector("#output");
+    let path = [];
+
+    function record(name) {
+      path.push(name);
+      output.textContent = path.join(" → ");
+    }
+
+    document.querySelector("#inner").addEventListener("click", () => {
+      path = [];
+      record("li");
+    });
+
+    document.querySelector("#stop").addEventListener("click", event => {
+      event.stopPropagation();
+      path = [];
+      record("li only");
+    });
+
+    document.querySelector("#middle").addEventListener("click", () => record("ul"));
+    document.querySelector("#outer").addEventListener("click", () => record("div"));
+  </script>
+</body>
+</html>

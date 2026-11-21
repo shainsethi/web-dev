@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echo Tiles Matching</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <main class="game">
+    <h1>Echo Tiles</h1>
+    <p id="status" role="status">Press Start to play</p>
+    <div id="board" class="board">
+      <button class="tile" data-tile="moon" aria-label="Moon">☾</button>
+      <button class="tile" data-tile="sun" aria-label="Sun">☀</button>
+      <button class="tile" data-tile="star" aria-label="Star">★</button>
+      <button class="tile" data-tile="leaf" aria-label="Leaf">❧</button>
+      <button class="tile" data-tile="wave" aria-label="Wave">≈</button>
+      <button class="tile" data-tile="bolt" aria-label="Bolt">ϟ</button>
+    </div>
+    <button id="start">Start</button>
+  </main>
+  <script>
+    const tileNames = ["moon", "sun", "star", "leaf", "wave", "bolt"];
+    const board = document.querySelector("#board");
+    const statusText = document.querySelector("#status");
+    const startButton = document.querySelector("#start");
+    let gameSequence = [];
+    let playerSequence = [];
+    let level = 0;
+    let acceptingInput = false;
+
+    function flash(name) {
+      const tile = document.querySelector(`[data-tile="${name}"]`);
+
+      tile.classList.add("flash");
+      setTimeout(() => tile.classList.remove("flash"), 300);
+    }
+
+    function playSequence() {
+      gameSequence.forEach((name, index) => {
+        setTimeout(() => flash(name), 600 * (index + 1));
+      });
+
+      setTimeout(() => {
+        acceptingInput = true;
+        statusText.textContent = "Your turn";
+      }, 600 * (gameSequence.length + 1));
+    }
+
+    function levelUp() {
+      startButton.disabled = true;
+      playerSequence = [];
+      level++;
+      statusText.textContent = `Level ${level}: watch the pattern`;
+      gameSequence.push(tileNames[Math.floor(Math.random() * tileNames.length)]);
+      playSequence();
+    }
+
+    function checkAnswer() {
+      const index = playerSequence.length - 1;
+
+      if (playerSequence[index] !== gameSequence[index]) {
+        acceptingInput = false;
+        statusText.textContent = "Wrong tile! Reload the page to try again.";
+        return;
+      }
+
+      if (playerSequence.length === gameSequence.length) {
+        acceptingInput = false;
+        statusText.textContent = "Correct!";
+        setTimeout(levelUp, 800);
+      }
+    }
+
+    startButton.addEventListener("click", levelUp);
+
+    board.addEventListener("click", event => {
+      const tile = event.target.closest(".tile");
+
+      if (!tile || !acceptingInput) {
+        return;
+      }
+
+      flash(tile.dataset.tile);
+      playerSequence.push(tile.dataset.tile);
+      checkAnswer();
+    });
+  </script>
+</body>
+</html>

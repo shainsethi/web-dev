@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment Question 4</title>
+</head>
+<body>
+  <h1>Assignment Question 4</h1>
+  <p>Open the browser console to see the output.</p>
+  <script>
+    let length = 4;
+
+    function callback() {
+      console.log(this.length);
+    }
+
+    const object = {
+      length: 5,
+      method(callback) {
+        callback();
+      },
+    };
+
+    object.method(callback, 1, 2);
+  </script>
+</body>
+</html>

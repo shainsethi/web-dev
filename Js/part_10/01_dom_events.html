@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Events</title>
+</head>
+<body>
+  <button id="inlineButton" onclick="document.querySelector('#output').textContent = 'Inline handler ran'">Inline</button>
+  <button id="propertyButton">Property</button>
+  <p id="output">Click a button</p>
+  <script>
+    const propertyButton = document.querySelector("#propertyButton");
+    const output = document.querySelector("#output");
+
+    propertyButton.onclick = () => {
+      output.textContent = "First handler ran";
+    };
+
+    propertyButton.onclick = () => {
+      output.textContent = "Second handler replaced the first";
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>More Events</title>
+</head>
+<body>
+  <label for="name">Name:</label>
+  <input id="name" type="text">
+  <p id="live">Live preview</p>
+  <p id="changed">Change event has not fired</p>
+  <p id="focusState">Input is not focused</p>
+  <script>
+    const nameInput = document.querySelector("#name");
+    const live = document.querySelector("#live");
+    const changed = document.querySelector("#changed");
+    const focusState = document.querySelector("#focusState");
+
+    nameInput.addEventListener("input", () => {
+      live.textContent = nameInput.value;
+    });
+
+    nameInput.addEventListener("change", () => {
+      changed.textContent = `Final value: ${nameInput.value}`;
+    });
+
+    nameInput.addEventListener("focus", () => {
+      focusState.textContent = "Input is focused";
+    });
+
+    nameInput.addEventListener("blur", () => {
+      focusState.textContent = "Input lost focus";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation on Page</title>
+</head>
+<body>
+  <ul id="list">
+    <li>First</li>
+    <li id="middle">Middle</li>
+    <li>Last</li>
+  </ul>
+  <script>
+    const middle = document.querySelector("#middle");
+    const list = middle.parentElement;
+
+    console.log("Parent:", list.tagName);
+    console.log("Child count:", list.childElementCount);
+    console.log("First child:", list.children[0].textContent);
+    console.log("Previous sibling:", middle.previousElementSibling.textContent);
+    console.log("Next sibling:", middle.nextElementSibling.textContent);
+    console.log("No sibling gives:", list.children[2].nextElementSibling);
+  </script>
+</body>
+</html>
