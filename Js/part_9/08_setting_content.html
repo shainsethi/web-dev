@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setting Content</title>
+</head>
+<body>
+  <p id="source">Hello <span style="display: none">hidden</span><b>world</b></p>
+  <p id="plain"></p>
+  <p id="markup"></p>
+  <script>
+    const source = document.querySelector("#source");
+
+    console.log("innerText:", source.innerText);
+    console.log("textContent:", source.textContent);
+    console.log("innerHTML:", source.innerHTML);
+
+    document.querySelector("#plain").textContent = "<b>Shown as plain text</b>";
+    document.querySelector("#markup").innerHTML = "<b>Shown as bold text</b>";
+  </script>
+</body>
+</html>

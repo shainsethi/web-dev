@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo with DOM</title>
+</head>
+<body>
+  <h1>Todo List</h1>
+  <form id="todoForm">
+    <label for="task">Task:</label>
+    <input id="task" type="text">
+    <button>Add</button>
+  </form>
+  <ul id="list"></ul>
+  <script>
+    const form = document.querySelector("#todoForm");
+    const input = document.querySelector("#task");
+    const list = document.querySelector("#list");
+
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const text = input.value.trim();
+
+      if (text === "") {
+        return;
+      }
+
+      const item = document.createElement("li");
+      const label = document.createElement("span");
+      const deleteButton = document.createElement("button");
+
+      label.textContent = `${text} `;
+      deleteButton.textContent = "Delete";
+      deleteButton.addEventListener("click", () => item.remove());
+
+      item.append(label, deleteButton);
+      list.append(item);
+      input.value = "";
+    });
+  </script>
+</body>
+</html>

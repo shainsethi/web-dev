@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listeners for Elements</title>
+</head>
+<body>
+  <h2 class="clickable">Click this heading</h2>
+  <p class="clickable">Click this paragraph</p>
+  <div class="clickable">Click this div</div>
+  <p id="output">Nothing clicked yet</p>
+  <script>
+    const elements = document.querySelectorAll(".clickable");
+    const output = document.querySelector("#output");
+
+    for (let element of elements) {
+      element.addEventListener("click", () => {
+        output.textContent = `You clicked a ${element.tagName}`;
+      });
+    }
+  </script>
+</body>
+</html>

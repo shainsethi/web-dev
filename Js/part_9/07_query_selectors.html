@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Query Selectors</title>
+</head>
+<body>
+  <p id="intro">Intro paragraph</p>
+  <p class="item">Item one</p>
+  <p class="item">Item two</p>
+  <div>
+    <a href="#top">Link inside div</a>
+  </div>
+  <script>
+    console.log("First p:", document.querySelector("p").textContent);
+    console.log("By ID:", document.querySelector("#intro").textContent);
+    console.log("By class:", document.querySelector(".item").textContent);
+    console.log("Nested:", document.querySelector("div a").textContent);
+    console.log("Missing:", document.querySelector(".missing"));
+
+    const items = document.querySelectorAll(".item");
+
+    console.log("All items:", items.length);
+
+    items.forEach((item, index) => {
+      item.textContent = `Updated item ${index + 1}`;
+    });
+  </script>
+</body>
+</html>

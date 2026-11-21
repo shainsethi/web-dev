@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is the DOM</title>
+</head>
+<body>
+  <h1>The Document Object Model</h1>
+  <p>Open the browser console to explore this page as objects.</p>
+  <script>
+    console.log("typeof document:", typeof document);
+    console.log("Title:", document.title);
+    console.log("Root element:", document.documentElement.tagName);
+    console.log("Body element:", document.body.tagName);
+    console.log("Body children:", document.body.children.length);
+    console.dir(document.body);
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Events</title>
+</head>
+<body>
+  <form id="signup">
+    <label for="city">City:</label>
+    <input id="city" name="city" type="text">
+    <button>Submit</button>
+  </form>
+  <p id="output">Form not submitted yet</p>
+  <script>
+    const form = document.querySelector("#signup");
+    const output = document.querySelector("#output");
+
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      output.textContent = "Submitted without reloading the page";
+    });
+  </script>
+</body>
+</html>

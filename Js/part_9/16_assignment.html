@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Part 9 Assignment</title>
+</head>
+<body>
+  <script>
+    const input = document.createElement("input");
+    const button = document.createElement("button");
+
+    button.textContent = "Click me";
+    document.body.append(input, button);
+
+    input.setAttribute("placeholder", "username");
+    button.setAttribute("id", "btn");
+
+    const btn = document.querySelector("#btn");
+
+    btn.style.backgroundColor = "blue";
+    btn.style.color = "white";
+
+    const heading = document.createElement("h1");
+
+    heading.textContent = "DOM Practice";
+    heading.style.textDecoration = "underline";
+    heading.style.color = "purple";
+    document.body.append(heading);
+
+    const paragraph = document.createElement("p");
+
+    paragraph.innerHTML = "Web Dev <b>Mastery</b> Practice";
+    document.body.append(paragraph);
+  </script>
+</body>
+</html>

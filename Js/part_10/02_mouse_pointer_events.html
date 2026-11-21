@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse and Pointer Events</title>
+  <style>
+    #box {
+      width: 200px;
+      height: 120px;
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+  <p id="output">Move, press, or click on the box</p>
+  <script>
+    const box = document.querySelector("#box");
+    const output = document.querySelector("#output");
+
+    box.onmouseenter = () => {
+      output.textContent = "Mouse entered";
+    };
+
+    box.onmouseleave = () => {
+      output.textContent = "Mouse left";
+    };
+
+    box.onpointerdown = () => {
+      output.textContent = "Pointer pressed";
+    };
+
+    box.onclick = () => {
+      output.textContent = "Clicked";
+    };
+
+    box.ondblclick = () => {
+      output.textContent = "Double clicked";
+    };
+  </script>
+</body>
+</html>

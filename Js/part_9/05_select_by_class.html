@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selecting by Class</title>
+</head>
+<body>
+  <p class="note">First</p>
+  <p class="note">Second</p>
+  <p class="note">Third</p>
+  <script>
+    const notes = document.getElementsByClassName("note");
+
+    console.log("Count:", notes.length);
+    console.log("Missing class count:", document.getElementsByClassName("missing").length);
+
+    for (let i = 0; i < notes.length; i++) {
+      notes[i].textContent = `Note ${i + 1}`;
+    }
+  </script>
+</body>
+</html>

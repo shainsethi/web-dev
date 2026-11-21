@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulating Attributes</title>
+</head>
+<body>
+  <a id="link" href="https://developer.mozilla.org/">MDN Docs</a>
+  <input id="field" type="text" disabled>
+  <script>
+    const link = document.querySelector("#link");
+    const field = document.querySelector("#field");
+
+    console.log("href:", link.getAttribute("href"));
+    link.setAttribute("title", "Open the MDN documentation");
+    console.log("title:", link.getAttribute("title"));
+
+    field.setAttribute("placeholder", "Enter your name");
+    console.log("Has disabled:", field.hasAttribute("disabled"));
+    field.removeAttribute("disabled");
+    console.log("Has disabled:", field.hasAttribute("disabled"));
+  </script>
+</body>
+</html>

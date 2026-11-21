@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adding Elements</title>
+</head>
+<body>
+  <ul id="list">
+    <li>Middle</li>
+  </ul>
+  <script>
+    const list = document.querySelector("#list");
+
+    const appended = document.createElement("li");
+    appended.textContent = "Added with appendChild";
+    list.appendChild(appended);
+
+    const prepended = document.createElement("li");
+    prepended.textContent = "Added with prepend";
+    list.prepend(prepended);
+
+    const last = document.createElement("li");
+    last.textContent = "Added with append";
+    list.append(last, " plain text");
+
+    const heading = document.createElement("h2");
+    heading.textContent = "Added before the list";
+    list.insertAdjacentElement("beforebegin", heading);
+
+    console.log("List items:", list.querySelectorAll("li").length);
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>classList Property</title>
+  <style>
+    .card {
+      padding: 12px;
+      border: 1px solid gray;
+    }
+
+    .active {
+      background-color: gold;
+    }
+
+    .rounded {
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div id="box" class="card">classList example</div>
+  <script>
+    const box = document.querySelector("#box");
+
+    box.classList.add("active");
+    console.log("After add:", box.className);
+
+    console.log("Contains active:", box.classList.contains("active"));
+
+    box.classList.remove("active");
+    console.log("After remove:", box.className);
+
+    console.log("Toggle returns:", box.classList.toggle("rounded"));
+    console.log("Toggle returns:", box.classList.toggle("rounded"));
+    box.classList.toggle("rounded");
+    box.classList.add("active");
+    console.log("Final classes:", box.className);
+  </script>
+</body>
+</html>

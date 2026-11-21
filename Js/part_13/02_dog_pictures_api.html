@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Pictures API</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.7.9/dist/axios.min.js"></script>
+  <style>
+    img {
+      display: block;
+      max-width: 100%;
+      max-height: 400px;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Random Dog Pictures</h1>
+  <button id="load">Get a dog picture</button>
+  <p id="status" role="status"></p>
+  <img id="dog" alt="A random dog" hidden>
+  <script>
+    const loadButton = document.querySelector("#load");
+    const statusText = document.querySelector("#status");
+    const dogImage = document.querySelector("#dog");
+
+    loadButton.addEventListener("click", async () => {
+      loadButton.disabled = true;
+      statusText.textContent = "Loading...";
+
+      try {
+        const response = await axios.get("https://dog.ceo/api/breeds/image/random");
+
+        dogImage.src = response.data.message;
+        dogImage.hidden = false;
+        statusText.textContent = "Loaded";
+      } catch (error) {
+        statusText.textContent = `Could not load the picture: ${error.message}`;
+      } finally {
+        loadButton.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Listeners</title>
+</head>
+<body>
+  <button id="clickButton">Click me</button>
+  <button id="removeButton">Stop counting</button>
+  <p id="count">Clicks: 0</p>
+  <p id="message"></p>
+  <script>
+    const clickButton = document.querySelector("#clickButton");
+    const removeButton = document.querySelector("#removeButton");
+    const countText = document.querySelector("#count");
+    const message = document.querySelector("#message");
+    let clicks = 0;
+
+    function countClick() {
+      clicks++;
+      countText.textContent = `Clicks: ${clicks}`;
+    }
+
+    clickButton.addEventListener("click", countClick);
+    clickButton.addEventListener("click", () => {
+      message.textContent = "Second listener also ran";
+    });
+
+    removeButton.addEventListener("click", () => {
+      clickButton.removeEventListener("click", countClick);
+    });
+  </script>
+</body>
+</html>

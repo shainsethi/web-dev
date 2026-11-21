@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Events</title>
+</head>
+<body>
+  <label for="keys">Press keys here:</label>
+  <input id="keys" type="text">
+  <p id="details">Waiting for a key</p>
+  <p id="direction"></p>
+  <script>
+    const keys = document.querySelector("#keys");
+    const details = document.querySelector("#details");
+    const direction = document.querySelector("#direction");
+
+    keys.addEventListener("keydown", event => {
+      details.textContent = `key: ${event.key}, code: ${event.code}`;
+
+      switch (event.key) {
+        case "ArrowUp":
+          direction.textContent = "Moving up";
+          break;
+        case "ArrowDown":
+          direction.textContent = "Moving down";
+          break;
+        case "ArrowLeft":
+          direction.textContent = "Moving left";
+          break;
+        case "ArrowRight":
+          direction.textContent = "Moving right";
+          break;
+        default:
+          direction.textContent = "";
+      }
+    });
+  </script>
+</body>
+</html>

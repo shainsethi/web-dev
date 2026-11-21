@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulating Style</title>
+  <style>
+    h1 {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>Style Example</h1>
+  <p>Styled from JavaScript</p>
+  <script>
+    const heading = document.querySelector("h1");
+    const paragraph = document.querySelector("p");
+
+    console.log("style.color from a stylesheet:", `[${heading.style.color}]`);
+    console.log("Computed color:", getComputedStyle(heading).color);
+
+    paragraph.style.color = "white";
+    paragraph.style.backgroundColor = "purple";
+    paragraph.style.padding = "8px";
+
+    console.log("Inline color:", paragraph.style.color);
+  </script>
+</body>
+</html>

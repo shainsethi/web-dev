@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echo Tiles Level Up</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <main class="game">
+    <h1>Echo Tiles</h1>
+    <p id="status" role="status">Press Start to play</p>
+    <div id="board" class="board">
+      <button class="tile" data-tile="moon" aria-label="Moon">☾</button>
+      <button class="tile" data-tile="sun" aria-label="Sun">☀</button>
+      <button class="tile" data-tile="star" aria-label="Star">★</button>
+      <button class="tile" data-tile="leaf" aria-label="Leaf">❧</button>
+      <button class="tile" data-tile="wave" aria-label="Wave">≈</button>
+      <button class="tile" data-tile="bolt" aria-label="Bolt">ϟ</button>
+    </div>
+    <button id="start">Start</button>
+  </main>
+  <script>
+    const tileNames = ["moon", "sun", "star", "leaf", "wave", "bolt"];
+    const statusText = document.querySelector("#status");
+    const startButton = document.querySelector("#start");
+    let gameSequence = [];
+    let level = 0;
+
+    function flash(name) {
+      const tile = document.querySelector(`[data-tile="${name}"]`);
+
+      tile.classList.add("flash");
+      setTimeout(() => tile.classList.remove("flash"), 300);
+    }
+
+    function playSequence() {
+      gameSequence.forEach((name, index) => {
+        setTimeout(() => flash(name), 600 * (index + 1));
+      });
+
+      setTimeout(() => {
+        startButton.disabled = false;
+        startButton.textContent = "Next level";
+        statusText.textContent = `Level ${level} finished`;
+      }, 600 * (gameSequence.length + 1));
+    }
+
+    function levelUp() {
+      startButton.disabled = true;
+      level++;
+      statusText.textContent = `Level ${level}: watch the pattern`;
+      gameSequence.push(tileNames[Math.floor(Math.random() * tileNames.length)]);
+      playSequence();
+    }
+
+    startButton.addEventListener("click", levelUp);
+  </script>
+</body>
+</html>

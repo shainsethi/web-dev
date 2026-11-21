@@ -1,0 +1,8 @@
+function rollDice() {
+  let dice = Math.floor(Math.random() * 6) + 1;
+  console.log("You rolled:", dice);
+}
+
+rollDice();
+rollDice();
+rollDice();
