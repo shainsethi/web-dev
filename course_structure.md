@@ -150,6 +150,18 @@ Learn how to track code, collaborate with branches, and share projects on GitHub
 - **Reference Notes**: [Git Study Guide (git.md)](Git/git.md)
 - **Practice Folder**: [Git/](Git/)
 
+### 🖥️ Module 24: Backend Part 1 (Node.js & npm)
+Learn how to run JavaScript outside the browser and organize projects with modules and packages.
+- **Topics**: Node.js, installation, the REPL, Node files, `process`, `module.exports`, exporting directories, npm, installing packages, `package.json`, local and global installation, and ES Modules.
+- **Reference Notes**: [Backend Part 1 Study Guide (part_1.md)](Backend/part_1/part_1.md)
+- **Practice Folder**: [Backend/part_1/](Backend/part_1/)
+
+### 🖥️ Module 25: Backend Part 2 (Express)
+Learn how to build web servers and handle requests with Express.
+- **Topics**: Express, servers and ports, requests, responses, routing, Nodemon, path parameters, and query strings.
+- **Reference Notes**: [Backend Part 2 Study Guide (part_2.md)](Backend/part_2/part_2.md)
+- **Practice Folder**: [Backend/part_2/](Backend/part_2/)
+
 ---
 
 ## 📈 Learning Recommendations

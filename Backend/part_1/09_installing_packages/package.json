@@ -1,0 +1,12 @@
+{
+  "name": "installing-packages-demo",
+  "version": "1.0.0",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ms": "2.1.3"
+  }
+}

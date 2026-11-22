@@ -31,6 +31,8 @@ Welcome to the Web Development Mastery Course! This repository contains a struct
 | **21** | **JavaScript Part 13: Axios & API Projects** | [JS Part 13 Study Guide](Js/part_13/part_13.md) | [Js/part_13/](Js/part_13/) |
 | **22** | **Terminal Fundamentals** | [Terminal Study Guide](Terminal/terminal.md) | [Terminal/](Terminal/) |
 | **23** | **Git & GitHub** | [Git Study Guide](Git/git.md) | [Git/](Git/) |
+| **24** | **Backend Part 1: Node.js & npm** | [Backend Part 1 Study Guide](Backend/part_1/part_1.md) | [Backend/part_1/](Backend/part_1/) |
+| **25** | **Backend Part 2: Express** | [Backend Part 2 Study Guide](Backend/part_2/part_2.md) | [Backend/part_2/](Backend/part_2/) |
 
 ---
 
@@ -53,6 +55,7 @@ Welcome to the Web Development Mastery Course! This repository contains a struct
 │   └── tailwindcss/                 # Tailwind CSS utility-first playground
 ├── Terminal/                        # Terminal commands, paths, & file management
 ├── Git/                             # Version control, branches, & GitHub workflows
+├── Backend/                         # Node.js, npm, & Express
 └── Js/                              # JavaScript module directories
     ├── README.md                    # Master JavaScript index
     ├── part_1/                      # REPL, dynamic typings, & operations

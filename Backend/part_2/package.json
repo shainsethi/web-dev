@@ -1,0 +1,15 @@
+{
+  "name": "express-lessons",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node 02_getting_started.js",
+    "dev": "nodemon 06_installing_nodemon.js"
+  },
+  "dependencies": {
+    "express": "5.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "3.1.11"
+  }
+}
