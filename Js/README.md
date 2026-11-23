@@ -5,7 +5,7 @@ Welcome to the JavaScript Fundamentals section! These parts cover the basics of 
 All code examples are written in simple, uncommented JavaScript files located in each `part_N/` directory.
 
 > [!TIP]
-> **Study Guide Available**: For step-by-step beginner-friendly explanations of all concepts, read the [part_1.md Study Guide](file:///home/shain/Workspace/Web%20development/Js/part_1/part_1.md) inside the `part_1/` folder.
+> **Study Guide Available**: For step-by-step beginner-friendly explanations of all concepts, read the [part_1.md Study Guide](part_1/part_1.md) inside the `part_1/` folder.
 
 ---
 
@@ -14,9 +14,9 @@ All code examples are written in simple, uncommented JavaScript files located in
 You can run each of these JavaScript files directly from your terminal using **Node.js**:
 
 1. Open your terminal.
-2. Navigate to this directory:
+2. From the repository root, move into this directory:
    ```bash
-   cd "/home/shain/Workspace/Web development/Js"
+   cd Js
    ```
 3. Run any file using `node "part_1/filename.js"`:
    ```bash
@@ -29,18 +29,18 @@ You can run each of these JavaScript files directly from your terminal using **N
 
 | Chapter | Topic | Code File Link | Description |
 | :---: | :--- | :--- | :--- |
-| **01** | **Console** | [01_console.js](file:///home/shain/Workspace/Web%20development/Js/part_1/01_console.js) | Print messages, warnings, errors, and grids. |
-| **02** | **REPL Environment** | [02_repl.js](file:///home/shain/Workspace/Web%20development/Js/part_1/02_repl.js) | Run JavaScript code statements interactively inside Node.js. |
-| **03** | **Casing & Typing** | [03_casing_typing.js](file:///home/shain/Workspace/Web%20development/Js/part_1/03_casing_typing.js) | Learn about case-sensitive identifiers and dynamic typing. |
-| **04** | **The 7 Data Types** | [04_data_types.js](file:///home/shain/Workspace/Web%20development/Js/part_1/04_data_types.js) | Declarations of Number, Boolean, String, Undefined, Null, Bigint, and Symbol. |
-| **05** | **Number Types** | [05_numbers.js](file:///home/shain/Workspace/Web%20development/Js/part_1/05_numbers.js) | Review positive, negative, integer, and decimal numbers. |
-| **06** | **Types of Operations** | [06_operations.js](file:///home/shain/Workspace/Web%20development/Js/part_1/06_operations.js) | Math equations including addition, modulo, and exponentiation. |
-| **07** | **NaN (Not a Number)** | [07_nan.js](file:///home/shain/Workspace/Web%20development/Js/part_1/07_nan.js) | Understand invalid mathematical results and their type mapping. |
-| **08** | **Booleans** | [08_booleans.js](file:///home/shain/Workspace/Web%20development/Js/part_1/08_booleans.js) | Initialize logical truth/false flag markers. |
-| **09** | **Standard Conversions** | [09_number_conversions.js](file:///home/shain/Workspace/Web%20development/Js/part_1/09_number_conversions.js) | Convert boolean values to integer outputs using `Number()` and unary `+`. |
-| **10** | **Bitwise Conversions** | [10_bitwise_conversions.js](file:///home/shain/Workspace/Web%20development/Js/part_1/10_bitwise_conversions.js) | Convert boolean false to number 0 using the double bitwise NOT operator `~~`. |
-| **11** | **Type Checking** | [11_typeof.js](file:///home/shain/Workspace/Web%20development/Js/part_1/11_typeof.js) | Inspect variable data types using the `typeof` utility. |
-| **12** | **Operator Precedence** | [12_precedence.js](file:///home/shain/Workspace/Web%20development/Js/part_1/12_precedence.js) | Learn the strict evaluation order of math operations (`()`, `**`, `*|/|%`, `+|-`). |
+| **01** | **Console** | [01_console.js](part_1/01_console.js) | Print messages, warnings, errors, and grids. |
+| **02** | **REPL Environment** | [02_repl.js](part_1/02_repl.js) | Run JavaScript code statements interactively inside Node.js. |
+| **03** | **Casing & Typing** | [03_casing_typing.js](part_1/03_casing_typing.js) | Learn about case-sensitive identifiers and dynamic typing. |
+| **04** | **The 7 Data Types** | [04_data_types.js](part_1/04_data_types.js) | Declarations of Number, Boolean, String, Undefined, Null, Bigint, and Symbol. |
+| **05** | **Number Types** | [05_numbers.js](part_1/05_numbers.js) | Review positive, negative, integer, and decimal numbers. |
+| **06** | **Types of Operations** | [06_operations.js](part_1/06_operations.js) | Math equations including addition, modulo, and exponentiation. |
+| **07** | **NaN (Not a Number)** | [07_nan.js](part_1/07_nan.js) | Understand invalid mathematical results and their type mapping. |
+| **08** | **Booleans** | [08_booleans.js](part_1/08_booleans.js) | Initialize logical truth/false flag markers. |
+| **09** | **Standard Conversions** | [09_number_conversions.js](part_1/09_number_conversions.js) | Convert boolean values to integer outputs using `Number()` and unary `+`. |
+| **10** | **Bitwise Conversions** | [10_bitwise_conversions.js](part_1/10_bitwise_conversions.js) | Convert boolean false to number 0 using the double bitwise NOT operator `~~`. |
+| **11** | **Type Checking** | [11_typeof.js](part_1/11_typeof.js) | Inspect variable data types using the `typeof` utility. |
+| **12** | **Operator Precedence** | [12_precedence.js](part_1/12_precedence.js) | Learn the strict evaluation order of math operations (`()`, `**`, `*|/|%`, `+|-`). |
 | **13** | **`let`, `var` & `const`** | [13_let_var_const.js](part_1/13_let_var_const.js) | Declare variables and compare reassignment rules. |
 | **14** | **Scope** | [14_scope.js](part_1/14_scope.js) | Understand function scope, block scope, and implicit globals. |
 | **15** | **Hoisting & TDZ** | [15_hoisting_tdz.js](part_1/15_hoisting_tdz.js) | Learn how declarations are hoisted and the Temporal Dead Zone. |

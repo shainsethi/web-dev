@@ -8,14 +8,14 @@ Welcome to the Web Development Mastery Course! This repository contains a struct
 
 | Module | Topic | Study Guide Link | Executable Practice Folder |
 | :---: | :--- | :--- | :--- |
-| **01** | **Introduction to the Web** | [Internet & Browser Architecture](file:///home/shain/Workspace/Web%20development/notes/Chapter_1_Internet_and_Web_Development.md) | - |
-| **02** | **HTML Part 1: Elements & Media** | [HTML Part 1 Study Guide](file:///home/shain/Workspace/Web%20development/HTML/part_1/README.md) | [HTML/part_1/](file:///home/shain/Workspace/Web%20development/HTML/part_1/) |
-| **03** | **HTML Part 2: Semantics & Blocks** | [HTML Part 2 Study Guide](file:///home/shain/Workspace/Web%20development/HTML/part_2/README.md) | [HTML/part_2/](file:///home/shain/Workspace/Web%20development/HTML/part_2/) |
-| **04** | **HTML Part 3: Tables & Forms** | [HTML Part 3 Study Guide](file:///home/shain/Workspace/Web%20development/HTML/part_3/README.md) | [HTML/part_3/](file:///home/shain/Workspace/Web%20development/HTML/part_3/) |
-| **05** | **CSS Part 1 - 3: Fundamentals** | [CSS Master Index Syllabus](file:///home/shain/Workspace/Web%20development/CSS/README.md) | [CSS/part_1/](file:///home/shain/Workspace/Web%20development/CSS/part_1/), [part_2/](file:///home/shain/Workspace/Web%20development/CSS/part_2/), [part_3/](file:///home/shain/Workspace/Web%20development/CSS/part_3/) |
-| **06** | **CSS Part 4 - 6: Modern Layouts** | [CSS Master Index Syllabus](file:///home/shain/Workspace/Web%20development/CSS/README.md) | [CSS/part_4/](file:///home/shain/Workspace/Web%20development/CSS/part_4/), [part_5/](file:///home/shain/Workspace/Web%20development/CSS/part_5/), [part_6/](file:///home/shain/Workspace/Web%20development/CSS/part_6/) |
-| **07** | **Tailwind CSS Crash Course** | [Tailwind CSS Study Guide](file:///home/shain/Workspace/Web%20development/CSS/tailwindcss/README.md) | [CSS/tailwindcss/](file:///home/shain/Workspace/Web%20development/CSS/tailwindcss/) |
-| **08** | **JavaScript Fundamentals** | [JS Part 1 Study Guide](file:///home/shain/Workspace/Web%20development/Js/part_1/part_1.md) | [Js/part_1/](file:///home/shain/Workspace/Web%20development/Js/part_1/) |
+| **01** | **Introduction to the Web** | [Internet & Browser Architecture](notes/Chapter_1_Internet_and_Web_Development.md) | - |
+| **02** | **HTML Part 1: Elements & Media** | [HTML Part 1 Study Guide](HTML/part_1/README.md) | [HTML/part_1/](HTML/part_1/) |
+| **03** | **HTML Part 2: Semantics & Blocks** | [HTML Part 2 Study Guide](HTML/part_2/README.md) | [HTML/part_2/](HTML/part_2/) |
+| **04** | **HTML Part 3: Tables & Forms** | [HTML Part 3 Study Guide](HTML/part_3/README.md) | [HTML/part_3/](HTML/part_3/) |
+| **05** | **CSS Part 1 - 3: Fundamentals** | [CSS Master Index Syllabus](CSS/README.md) | [CSS/part_1/](CSS/part_1/), [part_2/](CSS/part_2/), [part_3/](CSS/part_3/) |
+| **06** | **CSS Part 4 - 6: Modern Layouts** | [CSS Master Index Syllabus](CSS/README.md) | [CSS/part_4/](CSS/part_4/), [part_5/](CSS/part_5/), [part_6/](CSS/part_6/) |
+| **07** | **Tailwind CSS Crash Course** | [Tailwind CSS Study Guide](CSS/tailwindcss/README.md) | [CSS/tailwindcss/](CSS/tailwindcss/) |
+| **08** | **JavaScript Fundamentals** | [JS Part 1 Study Guide](Js/part_1/part_1.md) | [Js/part_1/](Js/part_1/) |
 | **09** | **JavaScript Part 2: Operators & Conditionals** | [JS Part 2 Study Guide](Js/part_2/part_2.md) | [Js/part_2/](Js/part_2/) |
 | **10** | **JavaScript Part 3: Strings & Arrays** | [JS Part 3 Study Guide](Js/part_3/part_3.md) | [Js/part_3/](Js/part_3/) |
 | **11** | **JavaScript Part 4: Loops** | [JS Part 4 Study Guide](Js/part_4/part_4.md) | [Js/part_4/](Js/part_4/) |
