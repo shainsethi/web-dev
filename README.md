@@ -33,6 +33,9 @@ Welcome to the Web Development Mastery Course! This repository contains a struct
 | **23** | **Git & GitHub** | [Git Study Guide](Git/git.md) | [Git/](Git/) |
 | **24** | **Backend Part 1: Node.js & npm** | [Backend Part 1 Study Guide](Backend/part_1/part_1.md) | [Backend/part_1/](Backend/part_1/) |
 | **25** | **Backend Part 2: Express** | [Backend Part 2 Study Guide](Backend/part_2/part_2.md) | [Backend/part_2/](Backend/part_2/) |
+| **26** | **Backend Part 3: EJS Templating** | [Backend Part 3 Study Guide](Backend/part_3/part_3.md) | [Backend/part_3/](Backend/part_3/) |
+| **27** | **Backend Miscellaneous: POST & OOP** | [Miscellaneous Study Guide](Backend/miscellaneous/miscellaneous.md) | [Backend/miscellaneous/](Backend/miscellaneous/) |
+| **28** | **Backend Part 4: REST & CRUD** | [Backend Part 4 Study Guide](Backend/part_4/part_4.md) | [Backend/part_4/](Backend/part_4/) |
 
 ---
 
@@ -55,7 +58,7 @@ Welcome to the Web Development Mastery Course! This repository contains a struct
 │   └── tailwindcss/                 # Tailwind CSS utility-first playground
 ├── Terminal/                        # Terminal commands, paths, & file management
 ├── Git/                             # Version control, branches, & GitHub workflows
-├── Backend/                         # Node.js, npm, & Express
+├── Backend/                         # Node.js, Express, EJS, OOP, & REST
 └── Js/                              # JavaScript module directories
     ├── README.md                    # Master JavaScript index
     ├── part_1/                      # REPL, dynamic typings, & operations

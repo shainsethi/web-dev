@@ -1,0 +1,25 @@
+<%- include("includes/head", { title }) %>
+<%- include("includes/header") %>
+<main class="page">
+  <section class="profile">
+    <h1><%= profile.name %></h1>
+    <p class="muted">@<%= username %></p>
+    <p><%= profile.bio %></p>
+    <p><strong><%= profile.posts.length %></strong> posts · <strong><%= profile.followers %></strong> followers · <strong><%= profile.following %></strong> following</p>
+  </section>
+  <% if (profile.posts.length === 0) { %>
+    <p class="muted">No posts yet.</p>
+  <% } else { %>
+    <section class="grid" aria-label="Posts">
+      <% for (const post of profile.posts) { %>
+        <article class="post">
+          <div class="art" role="img" aria-label="<%= post.caption %>"><%= post.emoji %></div>
+          <p><%= post.caption %></p>
+          <button class="like" type="button" data-like="<%= post.likes %>" aria-pressed="false">♡ <%= post.likes %></button>
+          <span class="muted"><%= post.comments %> comments</span>
+        </article>
+      <% } %>
+    </section>
+  <% } %>
+</main>
+<%- include("includes/footer") %>

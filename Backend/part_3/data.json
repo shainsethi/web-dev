@@ -1,0 +1,30 @@
+{
+  "riya": {
+    "name": "Riya Kapoor",
+    "bio": "Sketching cities one street at a time.",
+    "followers": 12400,
+    "following": 318,
+    "posts": [
+      { "emoji": "🏙️", "caption": "Morning skyline", "likes": 842, "comments": 31 },
+      { "emoji": "✏️", "caption": "New sketchbook", "likes": 516, "comments": 18 },
+      { "emoji": "☕", "caption": "Coffee and ink", "likes": 703, "comments": 24 }
+    ]
+  },
+  "arjun": {
+    "name": "Arjun Mehta",
+    "bio": "Weekend hikes and film photos.",
+    "followers": 8650,
+    "following": 412,
+    "posts": [
+      { "emoji": "🏔️", "caption": "Above the clouds", "likes": 1204, "comments": 57 },
+      { "emoji": "🌲", "caption": "Forest trail", "likes": 688, "comments": 22 }
+    ]
+  },
+  "mira": {
+    "name": "Mira Nair",
+    "bio": "Just getting started.",
+    "followers": 96,
+    "following": 141,
+    "posts": []
+  }
+}

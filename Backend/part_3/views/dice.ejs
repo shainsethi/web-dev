@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conditional Statements</title>
+</head>
+<body>
+  <h1>You rolled <%= value %></h1>
+  <% if (value === 6) { %>
+    <p>Top score. Roll again!</p>
+  <% } else if (value === 1) { %>
+    <p>Lowest score. Bad luck!</p>
+  <% } else { %>
+    <p>Keep playing.</p>
+  <% } %>
+</body>
+</html>

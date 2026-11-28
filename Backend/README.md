@@ -60,3 +60,62 @@ Study guide: [part_2.md](part_2/part_2.md). Run `npm install` once inside `Backe
 | **06** | **Installing Nodemon** | [06_installing_nodemon.js](part_2/06_installing_nodemon.js) | Restart automatically on save. |
 | **07** | **Path Parameters** | [07_path_parameters.js](part_2/07_path_parameters.js) | Read values from the URL path. |
 | **08** | **Query Strings** | [08_query_strings.js](part_2/08_query_strings.js) | Read search and filter values. |
+
+---
+
+## 🗺️ Part 3 Chapters: EJS
+
+Study guide: [part_3.md](part_3/part_3.md). Run `npm install` once inside `Backend/part_3/`, then start a lesson with `node 02_using_ejs.js`.
+
+| Chapter | Topic | Code File Link | Description |
+| :---: | :--- | :--- | :--- |
+| **01** | **What is Templating?** | [01_what_is_templating.js](part_3/01_what_is_templating.js) | Compare manual HTML with a template. |
+| **02** | **Using EJS** | [02_using_ejs.js](part_3/02_using_ejs.js) | Render a first view. |
+| **03** | **Views Directory** | [03_views_directory.js](part_3/03_views_directory.js) | Set a reliable views path. |
+| **04** | **Interpolation Syntax** | [04_interpolation_syntax.js](part_3/04_interpolation_syntax.js) | Use the EJS tags safely. |
+| **05** | **Passing Data to EJS** | [05_passing_data.js](part_3/05_passing_data.js) | Send values to a template. |
+| **06** | **Instagram EJS** | [06_instagram_ejs.js](part_3/06_instagram_ejs.js) | Render a page from a username. |
+| **07** | **Conditional Statements** | [07_conditional_statements.js](part_3/07_conditional_statements.js) | Show different HTML by value. |
+| **08** | **Loops** | [08_loops.js](part_3/08_loops.js) | Repeat HTML for a list. |
+| **09** | **data.json** | [data.json](part_3/data.json) | Use sample profile data. |
+| **10** | **Instagram Page with EJS** | [10_instagram_page.js](part_3/10_instagram_page.js) | Build a data-driven profile. |
+| **11** | **Serving Static Files** | [11_serving_static_files.js](part_3/11_serving_static_files.js) | Serve CSS and browser JS. |
+| **12** | **Includes** | [12_includes.js](part_3/12_includes.js) | Reuse shared page parts. |
+
+---
+
+## 🗺️ Miscellaneous Chapters: POST & OOP
+
+Study guide: [miscellaneous.md](miscellaneous/miscellaneous.md). Run `npm install` once inside `Backend/miscellaneous/`, then start with `node 01_get_and_post.js`.
+
+| Chapter | Topic | Code File Link | Description |
+| :---: | :--- | :--- | :--- |
+| **01** | **GET & POST Requests** | [01_get_and_post.js](miscellaneous/01_get_and_post.js) | Compare query strings and bodies. |
+| **02** | **Handling POST Requests** | [02_handling_post_requests.js](miscellaneous/02_handling_post_requests.js) | Parse and validate request bodies. |
+| **03** | **Revisiting JS (OOP)** | [03_revisiting_oop.js](miscellaneous/03_revisiting_oop.js) | Group data and behavior. |
+| **04** | **Object Prototypes** | [04_object_prototypes.js](miscellaneous/04_object_prototypes.js) | Follow the prototype chain. |
+| **05** | **Factory Functions** | [05_factory_functions.js](miscellaneous/05_factory_functions.js) | Create objects with a function. |
+| **06** | **New Operator** | [06_new_operator.js](miscellaneous/06_new_operator.js) | Share methods with constructors. |
+| **07** | **Classes in JS** | [07_classes.js](miscellaneous/07_classes.js) | Use class syntax. |
+| **08** | **Inheritance** | [08_inheritance.js](miscellaneous/08_inheritance.js) | Extend a parent class. |
+| **09** | **Summary Sheet** | [Guide](miscellaneous/miscellaneous.md) | Compare the main ideas. |
+
+---
+
+## 🗺️ Part 4 Chapters: REST
+
+Study guide: [part_4.md](part_4/part_4.md). Run `npm install` once inside `Backend/part_4/`, then start with `npm run dev`.
+
+| Chapter | Topic | Code File Link | Description |
+| :---: | :--- | :--- | :--- |
+| **01** | **What is REST?** | [01_what_is_rest.js](part_4/01_what_is_rest.js) | See the standard routes. |
+| **02** | **CRUD Operations** | [02_crud_operations.js](part_4/02_crud_operations.js) | Create, read, update, and delete. |
+| **03** | **Creating RESTful APIs** | [03_creating_restful_apis.js](part_4/03_creating_restful_apis.js) | Set up the API. |
+| **04** | **Index Route** | [04_index_route.js](part_4/04_index_route.js) | List all posts. |
+| **05** | **Create & New Route** | [05_create_and_new_route.js](part_4/05_create_and_new_route.js) | Show a form and add a post. |
+| **06** | **Redirect** | [06_redirect.js](part_4/06_redirect.js) | Redirect after a change. |
+| **07** | **Show Route** | [07_show_route.js](part_4/07_show_route.js) | Show one post. |
+| **08** | **Creating Ids (UUID)** | [08_creating_ids.js](part_4/08_creating_ids.js) | Generate unique ids. |
+| **09** | **Update Route** | [09_update_route.js](part_4/09_update_route.js) | Change a post with PATCH. |
+| **10** | **Edit Route** | [10_edit_route.js](part_4/10_edit_route.js) | Edit through an HTML form. |
+| **11** | **Destroy Route** | [11_destroy_route.js](part_4/11_destroy_route.js) | Delete a post. |

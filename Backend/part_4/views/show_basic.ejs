@@ -1,0 +1,10 @@
+<%- include("includes/head", { title: "Post" }) %>
+<main class="page">
+  <article class="card">
+    <h1>@<%= post.username %></h1>
+    <p><%= post.content %></p>
+    <p class="muted">ID: <%= post.id %></p>
+  </article>
+  <a href="/posts">Back to all posts</a>
+</main>
+<%- include("includes/footer") %>

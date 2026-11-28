@@ -1,0 +1,14 @@
+<%- include("includes/head", { title: "Edit Post" }) %>
+<main class="page">
+  <h1>Edit @<%= post.username %>'s post</h1>
+  <% if (error) { %>
+    <p class="error" role="alert"><%= error %></p>
+  <% } %>
+  <form class="card" action="/posts/<%= post.id %>?_method=PATCH" method="post">
+    <label for="content">Post</label>
+    <textarea id="content" name="content" maxlength="500" rows="5" required><%= content %></textarea>
+    <button class="button">Save changes</button>
+  </form>
+  <a href="/posts/<%= post.id %>">Cancel</a>
+</main>
+<%- include("includes/footer") %>

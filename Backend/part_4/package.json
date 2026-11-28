@@ -1,0 +1,17 @@
+{
+  "name": "rest-lessons",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node 11_destroy_route.js",
+    "dev": "nodemon -e js,ejs,css 11_destroy_route.js"
+  },
+  "dependencies": {
+    "ejs": "7.0.2",
+    "express": "5.3.0",
+    "method-override": "3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "3.1.11"
+  }
+}

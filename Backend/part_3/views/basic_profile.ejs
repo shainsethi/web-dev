@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instagram Page</title>
+</head>
+<body>
+  <h1><%= profile.name %></h1>
+  <p>@<%= username %></p>
+  <p><%= profile.bio %></p>
+  <p><%= profile.followers %> followers, <%= profile.following %> following</p>
+  <h2>Posts</h2>
+  <% if (profile.posts.length === 0) { %>
+    <p>No posts yet.</p>
+  <% } %>
+  <% for (const post of profile.posts) { %>
+    <article>
+      <p><%= post.emoji %> <%= post.caption %></p>
+      <p><%= post.likes %> likes, <%= post.comments %> comments</p>
+    </article>
+  <% } %>
+</body>
+</html>

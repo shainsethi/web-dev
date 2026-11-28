@@ -162,6 +162,24 @@ Learn how to build web servers and handle requests with Express.
 - **Reference Notes**: [Backend Part 2 Study Guide (part_2.md)](Backend/part_2/part_2.md)
 - **Practice Folder**: [Backend/part_2/](Backend/part_2/)
 
+### 🖥️ Module 26: Backend Part 3 (EJS Templating)
+Learn how to build dynamic server-rendered pages with EJS and Express.
+- **Topics**: Templating, EJS, the views directory, interpolation syntax, passing data, dynamic profile routes, conditionals, loops, `data.json`, an Instagram-style page, static files, and includes.
+- **Reference Notes**: [Backend Part 3 Study Guide (part_3.md)](Backend/part_3/part_3.md)
+- **Practice Folder**: [Backend/part_3/](Backend/part_3/)
+
+### 🖥️ Module 27: Backend Miscellaneous (POST & OOP)
+Learn how servers receive form data and how JavaScript objects share behavior.
+- **Topics**: GET and POST, request bodies, OOP, prototypes, factory functions, the `new` operator, classes, inheritance, and a summary sheet.
+- **Reference Notes**: [Miscellaneous Study Guide (miscellaneous.md)](Backend/miscellaneous/miscellaneous.md)
+- **Practice Folder**: [Backend/miscellaneous/](Backend/miscellaneous/)
+
+### 🖥️ Module 28: Backend Part 4 (REST & CRUD)
+Learn how to design RESTful routes by building a complete posts app.
+- **Topics**: REST, CRUD, index, new, create, redirect, show, UUIDs, update, edit, and destroy routes.
+- **Reference Notes**: [Backend Part 4 Study Guide (part_4.md)](Backend/part_4/part_4.md)
+- **Practice Folder**: [Backend/part_4/](Backend/part_4/)
+
 ---
 
 ## 📈 Learning Recommendations

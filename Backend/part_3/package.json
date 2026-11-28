@@ -1,0 +1,16 @@
+{
+  "name": "ejs-lessons",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node 12_includes.js",
+    "dev": "nodemon -e js,ejs,json,css 12_includes.js"
+  },
+  "dependencies": {
+    "ejs": "7.0.2",
+    "express": "5.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "3.1.11"
+  }
+}

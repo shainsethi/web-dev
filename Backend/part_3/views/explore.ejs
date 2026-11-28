@@ -1,0 +1,11 @@
+<%- include("includes/head", { title }) %>
+<%- include("includes/header") %>
+<main class="page">
+  <h1>Explore</h1>
+  <ul class="people">
+    <% for (const username of usernames) { %>
+      <li><a href="/ig/<%= encodeURIComponent(username) %>">@<%= username %></a></li>
+    <% } %>
+  </ul>
+</main>
+<%- include("includes/footer") %>

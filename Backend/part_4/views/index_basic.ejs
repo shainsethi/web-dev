@@ -1,0 +1,16 @@
+<%- include("includes/head", { title: "Posts" }) %>
+<main class="page">
+  <div class="top">
+    <h1>All Posts</h1>
+  </div>
+  <% if (posts.length === 0) { %>
+    <p class="muted">No posts yet.</p>
+  <% } %>
+  <% for (const post of posts) { %>
+    <article class="card">
+      <h2>@<%= post.username %></h2>
+      <p><%= post.content %></p>
+    </article>
+  <% } %>
+</main>
+<%- include("includes/footer") %>
